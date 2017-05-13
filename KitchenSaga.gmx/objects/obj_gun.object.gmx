@@ -31,6 +31,16 @@ depth = -y + obj_player.y_offset - 1;
 //set direction of weapon
 if (obj_player.hsp &lt; 0 ) image_xscale = -1;
 if (obj_player.hsp &gt; 0 ) image_xscale = 1;
+
+//Attack
+if(keyboard_check_pressed(ord("T")) &amp;&amp; obj_player.bullets &gt; 0){
+        obj_player.in_attack=true;
+            with(instance_create(x,y,obj_bullet))
+            {
+                image_xscale = other.image_xscale;
+            }
+    obj_player.bullets--;
+}
 </string>
           </argument>
         </arguments>
